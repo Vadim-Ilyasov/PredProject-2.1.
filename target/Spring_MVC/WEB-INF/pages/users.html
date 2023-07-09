@@ -1,0 +1,75 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Users</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<table>-->
+<!--    <thead>-->
+<!--    <tr>Name</tr>-->
+<!--    <tr>Surname</tr>-->
+<!--    <tr>Age</tr>-->
+<!--    <tr>Email</tr>-->
+<!--    </thead>-->
+<!--    <body>-->
+<!--    <p th:each="users : ${user}">-->
+<!--        <p th:text="${users.name}"></p>-->
+<!--        <p th:text="${users.surname}"></p>-->
+<!--        <p th:text="${users.age}"></p>-->
+<!--        <p th:text="${users.email}"></p>-->
+<!--    </p>-->
+
+
+<!--        <a><form th:method="GET" th:action="@{/{id}(id=${users.getId()})/replacement}" th:object="${users}">-->
+<!--            <input type="submit" value="EDIT USER"/>-->
+<!--        </form></a>-->
+
+<!--        <a><form th:method="DELETE" th:action="@{/{id}(id=${users.getId()})}" th:object="${users}">-->
+<!--            <input type="submit" value="DELETE USER"/>-->
+<!--        </form></a>-->
+
+
+<!--    </body>-->
+<!--</table>-->
+<!--<br>-->
+<!--<input type="button" value="Add User"-->
+<!--       onclick="window.location.href = 'addNewUser'">-->
+<!--<br><br>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>All users</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<table>
+    <thead>
+    <tr>Name</tr>
+    <tr>Surname</tr>
+    <tr>Age</tr>
+    <tr>Email</tr>
+    </thead>
+    <tbody>
+    <tr th:each="users : ${user}">
+        <td th:text="${users.getName()}"></td>
+        <td th:text="${users.getSurname()}"></td>
+        <td th:text="${users.getAge()}"></td>
+        <td th:text="${users.getEmail()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div>
+    <a th:href="@{/addNewUser}">
+        <input type="button" value="ADD NEW USER"/>
+    </a>
+</div>
+
+
+</body>
+</html>
